@@ -15,7 +15,7 @@ const Navbar = () => {
 
       {/* Alien Emoji */}
       <Link href="/">
-        <h1 className="items-center text-2xl cursor-pointer">👽</h1>
+        <h1 className="items-center text-3xl cursor-pointer">👽</h1>
       </Link>
       <div className="flex items-center">
         {/* Social icons */}

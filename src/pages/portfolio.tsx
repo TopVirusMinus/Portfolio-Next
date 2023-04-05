@@ -120,7 +120,7 @@ const Portfolio = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center min-h-screen w-full mx-auto"
+      className="mt-10 flex flex-col items-center w-full mx-auto"
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}

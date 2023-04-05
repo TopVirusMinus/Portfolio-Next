@@ -54,9 +54,14 @@ export default function Home() {
                 Portfolio
               </button>
             </Link>
-            <button className="bg-indigo-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-md">
-              Hire Me
-            </button>
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1BUW8DSMN6Y6LjppqQHURY36GFl1bBmzC/view?usp=share_link"
+            >
+              <button className="bg-indigo-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-md">
+                Resume
+              </button>
+            </a>
           </div>
         </div>
       </motion.div>

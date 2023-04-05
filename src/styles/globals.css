@@ -51,5 +51,5 @@ body {
   animation: moving-gradient 15s ease infinite;
 }
 .h-screen-80 {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 68px);
 }
