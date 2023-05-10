@@ -120,39 +120,44 @@ const Portfolio = () => {
 
   return (
     <motion.div
-      className="mt-10 flex flex-col items-center w-full mx-auto"
+      className="pt-10 h-screen flex flex-col items-center w-full mx-auto"
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Select
-        options={options}
-        value={options.find((option) => option.value === selectedCategory)}
-        onChange={(option: any) => setSelectedCategory(option.value)}
-        className="w-full max-w-sm text-slate-900 mb-8"
-        styles={{
-          control: (provided) => ({
-            ...provided,
-            boxShadow: "none",
-          }),
-        }}
-        theme={(theme) => ({
-          ...theme,
-          colors: {
-            ...theme.colors,
-            primary: "#333",
-            primary25: "#aaa",
-            primary50: "#aaa",
-            primary75: "#aaa",
-          },
-        })}
-      />
+      <motion.div whileFocus={{ scale: 1.05 }}>
+        <Select
+          options={options}
+          value={options.find((option) => option.value === selectedCategory)}
+          onChange={(option: any) => setSelectedCategory(option.value)}
+          className="w-full max-w-sm text-slate-900 mb-8"
+          styles={{
+            control: (provided) => ({
+              ...provided,
+              boxShadow: "none",
+            }),
+          }}
+          theme={(theme) => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary: "#333",
+              primary25: "#aaa",
+              primary50: "#aaa",
+              primary75: "#aaa",
+            },
+          })}
+        />
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredProjects.map((project, index) => (
-          <div
+          <motion.div
             className="relative bg-white rounded-lg shadow-lg overflow-hidden"
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
           >
             <Image
               className="w-full h-56 object-cover object-center"
@@ -163,12 +168,13 @@ const Portfolio = () => {
             />
             <div className="absolute inset-0 bg-gray-900 opacity-0 hover:opacity-80 transition-opacity duration-300">
               <div className="flex items-center justify-center h-full">
-                <a
+                <motion.a
                   href={project.url}
                   className="text-white text-lg font-bold hover:underline"
+                  whileHover={{ scale: 1.05 }}
                 >
                   View on GitHub
-                </a>
+                </motion.a>
               </div>
             </div>
             <div className="p-4">
@@ -189,7 +195,7 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.div>
